@@ -1,0 +1,36 @@
+<!-- Modal -->
+<div class="modal fade" id="infoModal{{ item.id }}" tabindex="-1" aria-labelledby="infoModalLabel{{ item.id }}" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content bg-dark text-white">
+            <div class="modal-header">
+                <h5 class="modal-title" id="infoModalLabel{{ item.id }}">{{ item.item_name }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Price:</strong> ${{ item.price }}</p>
+                <p><strong>Barcode:</strong> {{ item.barcode }}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="purchaseModal{{ item.id }}" tabindex="-1" aria-labelledby="purchaseModalLabel{{ item.id }}" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content bg-dark text-white">
+            <div class="modal-header">
+                <h5 class="modal-title" id="purchaseModalLabel{{ item.id }}">Confirm Purchase</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to buy {{ item.item_name }} for ${{ item.price }}?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <a href="{{ url_for('purchase_item', item_id=item.id) }}" class="btn btn-success">Confirm Purchase</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="container py-5">
+    <div class="p-5 mb-4 bg-dark rounded-3 text-white">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Welcome to the Flask Market</h1>
+            <p class="col-md-8 fs-4">
+                Your one-stop shop for buying and selling unique items.
+                Log in or register to view the market and manage your items.
+            </p>
+            <hr class="my-4">
+            {% if current_user.is_authenticated %}
+                <a class="btn btn-primary btn-lg" href="{{ url_for('market_page') }}" role="button">Get Started</a>
+            {% else %}
+                <a class="btn btn-primary btn-lg" href="{{ url_for('register_page') }}" role="button">Get Started</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
