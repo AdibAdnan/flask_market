@@ -4,10 +4,12 @@ A simple Flask web application for a virtual marketplace where users can registe
 
 ## Features
 
-*   User registration and login
-*   View items available in the market
-*   Purchase items
-*   Sell items
+*   **User Authentication:** Users can register for a new account and log in with their credentials.
+*   **Marketplace:** A central marketplace where users can view items available for purchase.
+*   **Purchase Items:** Users can purchase items from the market, which deducts the item's price from their points.
+*   **Sell Items:** Users can sell items they own back to the market, which adds the item's price back to their points.
+*   **Purchase Confirmation:** A modal dialog prompts users to confirm their purchase before the transaction is finalized.
+*   **User-Specific Views:** The market page dynamically displays available items and items owned by the logged-in user.
 
 ## Project Structure
 
@@ -23,6 +25,7 @@ A simple Flask web application for a virtual marketplace where users can registe
 │       ├── index.html
 │       ├── login.html
 │       ├── market.html
+│       ├── modal.html
 │       └── register.html
 ├── instance
 │   └── market.db
